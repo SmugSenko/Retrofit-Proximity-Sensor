@@ -3,7 +3,7 @@ import time
 import tkinter as tk
 
 class UltrasonicMonitorApp:
-    def __init__(self, root, trig_pin=23, echo_pin=24):
+    def __init__(self, root, trig_pin=17, echo_pin=16):
         """Initializes the GUI, Canvas, and GPIO pins."""
         self.root = root
         self.trig_pin = trig_pin
@@ -132,7 +132,7 @@ class UltrasonicMonitorApp:
             print(f"Sensor error: {e}")
         
         # Schedule next update (running slightly faster at 200ms for a more responsive UI)
-        self.root.after(200, self.update_gui)
+        self.root.after(50, self.update_gui)
 
     def on_closing(self):
         """Safely shuts down."""
